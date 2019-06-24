@@ -20,8 +20,8 @@ with open(csvpath, newline="") as csvfile:
         total_votes += 1
 
         #get a list of candidates
-        if row[1] not in candidates:
-            candidates.append(row[1])
+        if row[2] not in candidates:
+            candidates.append(row[2])
 
 
 
