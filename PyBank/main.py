@@ -56,8 +56,8 @@ rev_change_avg = sum(revenue_change_list) / len(revenue_change_list)
 
  
 print (f"There are {total_months} months.")
-print (f"The netprofit/loss is {net_profit}.")
-print (f"The net/profit change average is: {rev_change_avg}")
-print (f"The greatest average increase is: {greatest_increase[1]} on {greatest_increase[0]}.")
-print (f"The greatest average decrease is: {greatest_decrease[1]} on {greatest_decrease[0]}.")
+print (f"The netprofit/loss is ${net_profit}.")
+print (f"The net/profit change average is: ${rev_change_avg}.")
+print (f"The greatest average increase is: ${greatest_increase[1]} on {greatest_increase[0]}.")
+print (f"The greatest average decrease is: ${greatest_decrease[1]} on {greatest_decrease[0]}.")
 
