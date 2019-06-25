@@ -9,6 +9,7 @@ total_votes = 0
 
 
 candidates = []
+
 votes = {}
 
 
@@ -22,12 +23,11 @@ with open(csvpath, newline="") as csvfile:
         #calculate total number of votes
         total_votes += 1
 
-
-
-        #get a list of candidates
-        if row[2] not in candidates:
-            candidates.append(row[2])
-        
+    #get a list of candidates
+        if row[2] not in votes:
+            #candidates.append(row[2])
+            
+            votes = {row[2]:row[1]}
             #votes[row[2]] = 1
             # print (votes)
 
