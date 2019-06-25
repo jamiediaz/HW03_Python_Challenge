@@ -1,17 +1,11 @@
 import os
 import csv
- 
 
 csvpath = os.path.join("election_data.csv")
 
 total_votes = 0
-
-
 candidates = []
-
 votes = {}
-
-
 
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -28,15 +22,10 @@ with open(csvpath, newline="") as csvfile:
             # Add the names into the candidates list too. 
             votes[row[2]] = 1
             candidates.append(row[2])
-            
 
         else:
             #else the candidates are already listed, add 1 for every duplicate. 
             votes[row[2]] += 1
-
-
-       
-    
     
 #Print out a total of the votes casted
 print (f"The total votes casted are: {total_votes}.")    
@@ -58,7 +47,6 @@ max_val = max(votes.values())
 max_key = [k for k, v in votes.items() if v == max_val]
 
 print (f"\n------------------------------------------\nThe winner is: {max_key} with {max_val}% of the vote")
-
 
 file = open("results.txt","w")
 file.write(f"---------Total Votes-------------\n{total_votes}\n\n")
