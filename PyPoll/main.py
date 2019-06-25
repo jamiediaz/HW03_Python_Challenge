@@ -1,6 +1,7 @@
 import os
 import csv
-
+#from collections import Counter
+#from operator import itemgetter
 
 csvpath = os.path.join("election_data.csv")
 
@@ -9,6 +10,7 @@ total_votes = 0
 
 candidates = []
 votes = {}
+
 
 
 with open(csvpath, newline="") as csvfile:
@@ -34,6 +36,8 @@ with open(csvpath, newline="") as csvfile:
         
     
 
+
+
     
     
     
@@ -41,3 +45,4 @@ with open(csvpath, newline="") as csvfile:
 print (total_votes)    
 print (candidates)
 print (votes)
+
