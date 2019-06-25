@@ -20,17 +20,18 @@ with open(csvpath, newline="") as csvfile:
         #calculate total number of votes
         total_votes += 1
 
-
-
         #get a list of candidates
-        if row[2] not in candidates:
-            candidates.append(row[2])
+        if row[2] not in votes:
+            #if the candidate is not in the dictionary, add the name.  This also counts as 1 vote.  
+            # Add the names into the candidates list too. 
             votes[row[2]] = 1
-            # print (votes)
+            candidates.append(row[2])
+            
 
         else:
+            #if candidates are already listed, add 1 to ever duplicate. 
             votes[row[2]] += 1
-            #print (votes)
+        
     
 
     
