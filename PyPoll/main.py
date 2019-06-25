@@ -1,7 +1,6 @@
 import os
 import csv
-#from collections import Counter
-#from operator import itemgetter
+ 
 
 csvpath = os.path.join("election_data.csv")
 
@@ -31,18 +30,24 @@ with open(csvpath, newline="") as csvfile:
             
 
         else:
-            #if candidates are already listed, add 1 to ever duplicate. 
+            #else the candidates are already listed, add 1 for every duplicate. 
             votes[row[2]] += 1
-        
-    
 
 
-
-    
+       
     
     
 
-print (total_votes)    
-print (candidates)
-print (votes)
+print (f"The total votes casted are: {total_votes}.")    
+print (f"The following candidates are running:\n{candidates}")
+print (f"\n-------------Vote Tally----------------\n{votes}")
+sum_votes = sum(votes.values())
+for i in votes:
+    votes[i] = float(round((votes[i]/sum_votes)*100))
 
+print (f"\n------Results in percent-----------------\n{votes}")
+
+max_val = max(votes.values())
+max_key = [k for k, v in votes.items() if v == max_val]
+
+print (f"\n------------------------------------------\nThe winner is: {max_key} with {max_val}% of the vote")
